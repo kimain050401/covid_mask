@@ -2,6 +2,7 @@ import numpy as np
 import cv2
 import dlib
 import datetime
+import time
 
 faceCascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 predictor = dlib.shape_predictor("shape_predictor_68_face_landmarks.dat")
@@ -67,10 +68,11 @@ while True:
     # q를 누르면 종료
 
     if num == 1:
-        print("Okay")
         now = datetime.datetime.now()
-        timegood = now.strftime("%d/%m/%Y %H:%M:%S")
-        cv2.imwrite("images/img" + timegood + ".jpg", canvas)
+        timegood = now.strftime("%Y_%m_%d %H_%M_%S")
+        print(timegood)
+        name = "C:/covid_mask/" + timegood + ".jpg"
+        cv2.imwrite(name, canvas)
         num = 0
 
     if cv2.waitKey(1) & 0xFF == ord('q'):
