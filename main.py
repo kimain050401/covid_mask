@@ -55,7 +55,7 @@ while True:
     # 찾은 이미지 보여주기
     cv2.imshow("haha", canvas)
     
-    # q를 누르면 종료
+    # q 누르면 종료
     if num == 1:
         now = datetime.datetime.now()
         timegood = now.strftime("%Y_%m_%d %H_%M_%S")
