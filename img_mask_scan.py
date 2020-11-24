@@ -1,3 +1,5 @@
+# keras_model.h5 파일 다운
+
 import tensorflow.keras
 from PIL import Image, ImageOps
 import numpy as np
