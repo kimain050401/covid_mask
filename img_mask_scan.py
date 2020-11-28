@@ -20,7 +20,7 @@ while (True):
     ret, img = cap.read()
     cv2.flip(img, 1)
     cv2.imwrite("test.jpg", img)
-    time.sleep(0.1)
+    # time.sleep(0.1)
 
     image = Image.open('test.jpg')
 
@@ -48,7 +48,7 @@ while (True):
     print(txtp[np.argmax(prediction[0])])
 
     if txtp[np.argmax(prediction[0])] == "===> 예상 : 마스크 미착용":
-        if how > 5:
+        if how >= 2:
             print("마스크를 착용하지 않으신 것 같습니다. 마스크를 착용해주세요.")
 
             pill_image = Image.fromarray(cv2.cvtColor(img, cv2.COLOR_BGR2RGB))
